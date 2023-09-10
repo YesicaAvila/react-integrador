@@ -23,5 +23,6 @@ export const StyledButton = styled(motion.button)`
     }
     @media (max-width: 768px) {
         padding: 0.5rem 0.2rem;
+        margin-right: 1.3rem;
     }
 `;

@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { 
-    BackgroundDiv,
     CartStyled,
     HomeContainerStyled, 
     LinkContainerStyled, 
-    LinksContainerStyled, 
-    MenuContainerStyled, 
-    NavbarContainerStyled, 
+    LinksContainerStyled,  
+    NavbarContainerStyled,  
     SpanStyled, 
     UserContainerStyled, 
     UserNavStyled 

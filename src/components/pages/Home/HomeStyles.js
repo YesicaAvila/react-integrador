@@ -29,8 +29,8 @@ export const RecomendadosSection = styled.section`
     }
     @media (max-width: 768px) {
         h2 {
-            color: white;
-            font-size: 50px;
+            color: black;
+            font-size: 35px;
         }
     }
 `;

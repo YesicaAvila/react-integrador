@@ -65,6 +65,7 @@ export const CardImg = styled.img`
     @media (max-width: 768px) {
         width: 40%;
         height: 70%;
+        margin-left: 1.4rem;
 
     }
 
@@ -75,6 +76,10 @@ export const CardText = styled.div`
     flex-direction: column;
     gap: 6px;
     width: 100px;
+    margin-right: 1.8rem;
+    @media (max-width: 768px) {
+        width: 100%;
+    }
 `;
 
 export const CardTitle = styled.h3`
@@ -82,7 +87,7 @@ export const CardTitle = styled.h3`
     font-size: 15px;
     margin-bottom: 5px;
     font-weight: 500;
-    letter-spacing: 0.3rem;
+    letter-spacing: 0.2rem;
     color: white;
     @media (max-width:1200px) {
         gap: 10px;

@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, {  useState } from 'react';
 import { ProductosContainer } from './ProductsStyles';
 import { ButtonContainerStyled } from '../pages/Home/HomeStyles';
-import SkeletonChakra from '../Skeleton/SkeletonChakra';
 import CardProducto from './CardProducto';
 import Button from '../UI/Button/Button';
 import { useSelector } from 'react-redux';
@@ -11,7 +10,6 @@ import { INITIAL_LIMIT } from '../utils';
 
 const CardsProductos = ({handleCartAlert}) => {
   const [limit, setLimit] = useState(INITIAL_LIMIT);
-  
 
 
     let products = useSelector(state => state.products.products )
@@ -27,16 +25,15 @@ const CardsProductos = ({handleCartAlert}) => {
   return (
     <>
         <ProductosContainer>
-          {
+          { 
             Object.entries(products).map(([,books]) => {
               return books.map((book) => {
                 if (limit >= book.id || selectedCategory){
                   return <CardProducto {...book} key={book.id} handleCartAlert={handleCartAlert}/>
                 }
-                return null
-              })
-            })
-          }
+                return null;
+              });
+            })}
         </ProductosContainer>
         {
           !selectedCategory && (
@@ -46,9 +43,7 @@ const CardsProductos = ({handleCartAlert}) => {
                 disabled={INITIAL_LIMIT === limit}
                 >Ver menos
                 </Button>
-                <Button onClick={() => setLimit(prevLimit => prevLimit + INITIAL_LIMIT)}
-                disabled={totalProducts <= limit}
-                >
+                <Button onClick={() =>setLimit(prevLimit => prevLimit + INITIAL_LIMIT)} disabled={totalProducts <= limit}>
                 Ver más
                 </Button>
             </ButtonContainerStyled>
