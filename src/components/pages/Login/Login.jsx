@@ -7,26 +7,15 @@ import Submit from '../../UI/Submit/Submit';
 import { loginInitialValues } from '../../Formik/initialVaues';
 import { loginValidationSchema } from '../../Formik/validationValues';
 import { useDispatch } from 'react-redux';
-
-import {setCurrentUser} from '../../redux/user/userSlice';
 import useRedirect from '../../Hooks/useRedirect';
+import { loginUser } from '../../../axios/axios-user';
+import { setCurrentUser } from '../../redux/user/userSlice';
 
 
 
 const Login = () => {
 
     const dispatch = useDispatch();
-
-    const onSubmit = async (values, actions) => {
-        const user = {
-        name: values.name,
-        email: values.email,
-        password: values.password,
-        };
-        dispatch(setCurrentUser(user));
-        actions.resetForm()
-
-    };
 
     useRedirect("/")
 
@@ -37,10 +26,19 @@ const Login = () => {
                 <Formik
                     initialValues={loginInitialValues}
                     validationSchema={loginValidationSchema}
-                    onSubmit={onSubmit}
+                    onSubmit={async (values) => {
+                        const user = await loginUser(values.email, values.password);
+
+                        if(user) {
+                            dispatch(setCurrentUser({
+                                ...user.usuario,
+                                token: user.token
+                            }))
+                        }
+
+                    }}
                 >
                     <Form>
-                        <LoginInput name="name" type='text' placeholder='Nombre' />
                         <LoginInput name="email" type='text' placeholder='Email' />
                         <LoginInput name="password" type='password' placeholder='Password' />
                         <Link to='/forgot-password'>

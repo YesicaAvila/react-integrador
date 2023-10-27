@@ -30,10 +30,6 @@ function Navbar() {
     const [clicked, setClicked] = useState(false);
     
 
-    const handleClick = () => {
-        setClicked(!clicked);
-    };
-
     
 
     return (
@@ -71,7 +67,7 @@ function Navbar() {
                 }>
                     <SpanStyled>
                         {
-                            currentUser ? `${currentUser.name}` : 'Iniciá Sesion'
+                            currentUser ? `${currentUser.nombre}` : 'Iniciá Sesion'
                         }
                     </SpanStyled>
                 </UserContainerStyled>

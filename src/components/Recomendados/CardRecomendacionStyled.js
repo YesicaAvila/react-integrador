@@ -39,7 +39,8 @@ export const Card = styled.div`
     gap: 1rem;
     height: 200px;
     padding: 1rem 1.7rem;
-    background: var(--gradient-black);
+    background: #252422;
+    border: solid black;
     border-radius: 15px;
     @media (max-width: 1200px) {
         width: 100%;

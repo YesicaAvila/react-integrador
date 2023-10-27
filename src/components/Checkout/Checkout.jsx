@@ -1,13 +1,13 @@
 import React from 'react'
-import { ContainerCheckoutStyled } from './CheckoutStyles';
+import { ContainerCheckoutStyled, HrCheckoutStyled } from './CheckoutStyles';
 import ProductCheckout from './ProductCheckout.jsx/ProductCheckout'
-import { useDispatch, useSelector } from 'react-redux'
-import Submit from '../UI/Submit/Submit';
-import { clearCart } from '../redux/cart/cartSlice';
+import { useSelector } from 'react-redux'
+
+import CheckoutForm from './Form/CheckoutForm';
+
 
 const Checkout = () => {
 
-    const dispatch = useDispatch();
 
     const {cartItems, shippingCost} = useSelector(state => state.cart)
 
@@ -15,20 +15,21 @@ const Checkout = () => {
         return (acc += item.precio * item.quantity)
     }, 0)
 
-    const handlePurchase = () => {
-        alert("Compra realizada con éxito. Gracias por su compra");
-        dispatch(clearCart());
-    };
 
   return (
     <div>
         <ContainerCheckoutStyled>
+            <CheckoutForm
+                cartItems={cartItems}
+                shippingCost={shippingCost}
+                precio={precio}
+            />
+            <HrCheckoutStyled />
             <ProductCheckout
                 cartItems={cartItems}
                 shippingCost={shippingCost}
                 precio={precio}
             />
-            <Submit onClick={handlePurchase} disabled={!cartItems.length}>Comprar</Submit>
         </ContainerCheckoutStyled>
     </div>
   );

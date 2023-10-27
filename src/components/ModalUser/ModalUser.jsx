@@ -46,9 +46,9 @@ const ModalUser = () => {
           id='modal-user'
           
         >
-            <UsernameStyled>{currentUser?.name}</UsernameStyled>
+            <UsernameStyled>{currentUser?.nombre}</UsernameStyled>
             <HrStyled />
-            <LinkStyled to='/checkout' onClick={() => {
+            <LinkStyled to='/mi-orden' onClick={() => {
               dispatch(toggleMenuHidden())
             }}>Mis ordenes</LinkStyled>
             <span onClick={() => {

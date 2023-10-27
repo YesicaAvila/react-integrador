@@ -5,13 +5,15 @@ export const ContactStyled = styled.div`
     width: 50%;
     margin: 0 auto;
     padding: 3rem;
-    background-image: url('https://res.cloudinary.com/dqhrvfasu/image/upload/v1689179415/libro_fondo_jpmwcl.jpg');
+    background: linear-gradient(to right, #000000, #434343);
+    /* background-image: url('https://res.cloudinary.com/dqhrvfasu/image/upload/v1689179415/libro_fondo_jpmwcl.jpg');
     background-position: center;
-    background-size: cover;
+    background-size: cover; */
     box-shadow: 0.5rem 0.5rem 0.5rem 0.5rem black;
+    border-radius: 1rem;
     
     h2 {
-        color: black;
+        color: white;
         text-align: left;
     }
     @media (max-width: 1200px) {

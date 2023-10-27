@@ -20,8 +20,6 @@ export const Categoria = ({img, title, categoria}) => {
         src={img}
         alt={categoria}
         />
-        
-
     </CardCategory>
   );
 };

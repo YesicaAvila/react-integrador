@@ -25,7 +25,7 @@ export const GlobalStyles = createGlobalStyle`
     body {
         margin: 0;
         padding: 0;
-        background: #EEE1C5;
+        background: #fed9b7;
         font-family: 'Cinzel', serif;
         color: white;
         -webkit-tap-highlight-color: transparent;

@@ -19,4 +19,7 @@ export const IncreaseStyled = styled(motion.button)`
         opacity: 0.5;
         cursor: not-allowed;
     }
+    @media (max-width: 700px) {
+        width: 100%;
+    }
 `;

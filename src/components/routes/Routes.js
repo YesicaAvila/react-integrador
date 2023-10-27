@@ -7,7 +7,9 @@ import PageNotFound from '../pages/PageNotFound/PageNotFound';
 import Layout from '../Layout/Layout';
 import Checkout from '../Checkout/Checkout';
 import ProtectedRoute from '../ProtectedRoutes/ProtectedRoute';
-
+import CompraRealizada from '../CompraRealizada/CompraRealizada';
+import MiOrden from '../MiOrden/MiOrden';
+import Resumen from '../pages/Resumen/Resumen'
 
 const Routes = () => {
     return (
@@ -17,15 +19,16 @@ const Routes = () => {
                     <Route path="/" element={<Home />} />
                     <Route path="login" element={<Login />} />
                     <Route path='/register' element={<Register />} />
-
+                    <Route path='/mi-orden' element={<MiOrden />} />
+                    <Route path='compra-realizada' element={<CompraRealizada/>} />
+                    <Route path='/resumen/:orderId' element={<Resumen />} />
                     <Route path='/checkout' 
-                    element={
+                        element={
                         <ProtectedRoute redirectTo='/register'>
                             <Checkout />
                         </ProtectedRoute>
                         }
                     />
-
                     <Route path='*' element={<PageNotFound />} />
                 </ReactDomRoutes>
             </Layout>

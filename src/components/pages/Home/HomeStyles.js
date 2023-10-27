@@ -101,4 +101,4 @@ export const ButtonContainerStyled = styled.div`
     gap: 20px;
     margin-top: 2rem;
     margin-bottom: 3rem;
-    `;
+`;

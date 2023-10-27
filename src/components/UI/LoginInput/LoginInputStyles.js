@@ -17,7 +17,7 @@ export const LoginInputStyled = styled.input`
     font-size: 18px;
     outline: none;
     border: ${({ isError }) => (isError ? '3px solid #fb103d ' : 'none')};
-    color: white;
+    background: black;
     border: 1px solid rgba(255, 255, 255, 0.438);
     border-radius: 8px;
     background: rgba(105, 105, 105, 0);

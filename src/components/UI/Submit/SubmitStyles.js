@@ -19,7 +19,8 @@ export const ButtonSubmitStyled = styled(motion.button)`
     }
     
     @media (max-width: 1200px) {
-        width: 50%;
+        width: 70%;
+        text-align: center;
     }
     @media (max-width: 745px) {
         width: 100%;

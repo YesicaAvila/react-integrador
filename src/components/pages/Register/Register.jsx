@@ -5,27 +5,13 @@ import LoginInput from '../../UI/LoginInput/LoginInput';
 import Submit from '../../UI/Submit/Submit';
 import {  registerInitialValues } from'../../Formik/initialVaues';
 import { registerValidationSchema } from '../../Formik/validationValues';
-import {setCurrentUser} from '../../redux/user/userSlice';
-import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { createUser } from '../../../axios/axios-user';
 
 const Register = () => {
 
   const navigate = useNavigate()
 
-  const dispatch = useDispatch();
-
-  const onSubmit = async (values, actions) => {
-    const user = {
-      name: values.name,
-      email: values.email,
-      password: values.password,
-    };
-    dispatch(setCurrentUser(user));
-    actions.resetForm();
-    navigate("/login")
-  };
-  
   return (
     <BodyRegisterContainer>
       <LoginContainerStyled>
@@ -33,7 +19,14 @@ const Register = () => {
         <Formik
           initialValues={registerInitialValues}
           validationSchema={registerValidationSchema}
-          onSubmit={onSubmit}
+          onSubmit={ async (values, actions) => {
+            const user = await createUser(values.name, values.email, values.password);
+            actions.resetForm();
+            if (user) {
+              navigate("/login")
+            }
+          }}
+            
         >
           <Form>
             <LoginInput name="name" type='text' placeholder='Nombre' />

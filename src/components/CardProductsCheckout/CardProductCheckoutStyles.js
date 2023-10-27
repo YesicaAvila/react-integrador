@@ -12,6 +12,13 @@ export const CardContainerStyled = styled.div`
         border-radius: 16px;
         object-fit: cover;
     }
+    @media (max-width: 428px) {
+        width: 100%;
+    }
+    @media (max-width: 372px) {
+        width: 100%;
+        gap: 15px;
+    }
 `;
 
 export const CardInfoStyled = styled.div`
@@ -19,23 +26,34 @@ export const CardInfoStyled = styled.div`
     flex-direction: column;
     gap: 5px;
     width: 50%;
+    @media (max-width: 372px) {
+        width: 100%;
+    }
 `;
 
 export const ProductTitleStyled = styled.h3`
     margin: 0;
     margin-bottom: 2px;
     font-weight: 500;
+    @media (max-width: 372px) {
+        width: 100%;
+    }
 `;
 
 export const TextStyled = styled.h3`
     margin: 0;
     color: #666;
     font-size: 1rem;
+    
 `;
 
 export const PriceStyled = styled.span`
-    font-weight: 700;
+    font-weight: 600;
     font-size: 24px;
+    @media (max-width: 372px) {
+        font-size: 20px;
+
+    }
 `;
 
 export const QuantityContainerStyled = styled.span`

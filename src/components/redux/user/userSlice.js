@@ -10,14 +10,13 @@ const userSlice = createSlice({
     initialState: INITIAL_STATE,
     reducers: {
         setCurrentUser: (state, action) => {
-            console.log('Nuevo usuario:', action.payload);
             return {
                 ...state,
                 currentUser: action.payload,
             };
         },
         toggleMenuHidden: (state) => {
-            console.log('Estado anterior de hiddenMenu:', state.hiddenMenu);
+            
             return {
                 ...state,
                 hiddenMenu: !state.hiddenMenu,

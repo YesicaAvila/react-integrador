@@ -7,7 +7,7 @@ export const InputBoxStyled = styled.div`
     justify-content: flex-start;
     align-items: flex-start;
     padding: 0.5rem;
-    color: black;
+    color: white;
 `; 
 
 export const InputLabelStyled = styled.label`

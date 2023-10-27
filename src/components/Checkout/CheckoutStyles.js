@@ -8,3 +8,8 @@ export const ContainerCheckoutStyled = styled.div`
     padding: 5rem 5rem;
     background: var(--gradient-black);
 `;
+
+export const HrCheckoutStyled = styled.hr`
+    margin: 2.5rem 0;
+    width: 100%;
+`;

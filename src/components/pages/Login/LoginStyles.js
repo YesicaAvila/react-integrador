@@ -29,13 +29,13 @@ export const LoginContainerStyled = styled.div`
     gap: 10px;
     margin-top: 120px;
     margin-bottom: 50px;
-    color: white;
+    color: black;
     width: 38%;
     border-radius: 10px;
     padding: 40px 10px;
     box-shadow: -3px -3px 9px #aaa9a9a2, 3px 3px 7px rgba(147, 149, 151, 0.671);
     background-color: rgba(255, 255, 255, 0.13);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(13px);
     filter: contrast(100%);
     @media (max-width: 457px) {
         width: 100%;

@@ -28,9 +28,10 @@ export const LoginContainerStyled = styled.div`
     margin-bottom: 20px;
     padding: 10px 10px 10px 10px;
     gap: 10px;
-    color: black;
+    color: gray;
     background-color: rgba(255, 255, 255, 0.13);
     border: 1px solid #fb8500;
+    backdrop-filter: blur(14px);
 `;
 
 export const Form = styled(FormikForm)`
@@ -44,7 +45,8 @@ export const Form = styled(FormikForm)`
 
 export const LoginEmailStyled = styled(Link)`
     p {
-        color: var(--gradinet-black);
+        color: black;
+        font-weight: 600;
 
         :hover{
             text-decoration: underline;
